@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initialView: 'timeGridDay',
     slotMinTime: '07:00:00',
     slotMaxTime: '22:00:00',
+    contentHeight: 700,
     editable: true,
     locales: [frLocale],
     locale: 'fr',
