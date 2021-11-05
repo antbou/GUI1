@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     editable: true,
     locales: [frLocale],
     locale: 'fr',
+    eventBackgroundColor: '#00a651',
+    eventBorderColor: '#009933',
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
