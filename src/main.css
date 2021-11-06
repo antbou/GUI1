@@ -27,6 +27,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  padding: 0;
 }
 
 .container {
@@ -181,12 +182,18 @@ body {
 }
 
 .section{
+  width: 100%;
   display: block;
   animation: appear 2s;
+  padding-top: 5%;
 }
 
 .hidden {
   transition: all .5s ease-in-out;
   opacity: 0;
   display: none;
+}
+
+#calendar{
+  margin: 0 auto;
 }
