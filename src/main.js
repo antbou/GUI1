@@ -98,6 +98,15 @@ let checkbox = document.querySelector("input[name=Hamburger]");
 checkbox.addEventListener('change', function () {
 
   let section = document.querySelector("section");
-  (this.checked) ? section.style.display = "none" : section.style.display = "block";
+
+  if (this.checked) {
+    console.log("asd");
+    (section.classList.contains('section')) ? section.classList.remove('section') : false;
+    (section.classList.contains('hidden')) ? true : section.classList.add('hidden');
+  } else {
+    (section.classList.contains('hidden')) ? section.classList.remove('hidden') : false;
+    (section.classList.contains('section')) ? true : section.classList.add('section');
+  }
+
 
 });
