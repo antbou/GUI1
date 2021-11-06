@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     events: [
       {
+        id: '1',
         title: 'GPR1',
         start: '2021-11-05T08:00:00',
         end: '2021-11-05T09:35:00',
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
       {
+        id: '2',
         title: 'MAW 1.1 - E-Commerce',
         start: '2021-11-05T09:50:00',
         end: '2021-11-05T12:15:00',
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
       {
+        id: '3',
         title: 'CLD1',
         start: '2021-11-05T13:30:00',
         end: '2021-11-05T15:05:00',
@@ -54,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       },
       {
+        id: '4',
         title: 'Rattrapages - Te - Retenues',
         start: '2021-11-05T15:20:00',
         end: '2021-11-05T16:55:00',
@@ -63,23 +67,44 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       }
     ],
-    eventDidMount: function (info) {
+    eventDidMount: function (info) { // Adds 2 more fields (teacher and room)
 
-      const teacher = document.createElement('i');
+      let teacher = document.createElement('i');
       teacher.textContent = info.event.extendedProps.teacher;
       teacher.className = 'extendedProps'
 
-      const room = document.createElement('i');
+      let room = document.createElement('i');
       room.textContent = info.event.extendedProps.room;
       room.className = 'extendedProps'
 
-      const element = info.el.querySelector('.fc-event-title');
+      let element = info.el.querySelector('.fc-event-title');
+      element.setAttribute('data-id', info.event.id);
 
       element.after(teacher);
       teacher.after(room);
       room.before(document.createElement('br'))
 
     },
+    eventClassNames: function (arg) { // hides or displays additional fields depending on the view
+
+      let element = document.querySelector('div[data-id="' + arg.event.id + '"]');
+
+      if (!element) {
+        return;
+      }
+
+      let extendedProps = element.parentElement.querySelectorAll('.extendedProps');
+
+      if (arg.view.type == 'timeGridWeek') {
+        extendedProps.forEach(function (params) {
+          params.style.display = 'none'
+        })
+      } else {
+        extendedProps.forEach(function (params) {
+          params.style.display = ''
+        })
+      }
+    }
   });
 
   const slotLabelOption = {
@@ -96,18 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let checkbox = document.querySelector("input[name=Hamburger]");
 
-checkbox.addEventListener('change', function () {
-
+checkbox.addEventListener('change', function () { // Shows or hides the "section" depending on the hamberger input
   let section = document.querySelector("section");
-
   if (this.checked) {
-    console.log("asd");
     (section.classList.contains('section')) ? section.classList.remove('section') : false;
     (section.classList.contains('hidden')) ? true : section.classList.add('hidden');
   } else {
     (section.classList.contains('hidden')) ? section.classList.remove('hidden') : false;
     (section.classList.contains('section')) ? true : section.classList.add('section');
   }
-
-
 });
