@@ -1,9 +1,7 @@
 {
   "private": true,
-  "name": "@fullcalendar-example-projects/webpack",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "ISC",
-  "author": "Adam Shaw <arshaw@arshaw.com> (http://arshaw.com/)",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
@@ -21,7 +19,13 @@
   "devDependencies": {
     "css-loader": "^4.3.0",
     "mini-css-extract-plugin": "^1.2.0",
-    "webpack": "^5.3.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.62.1",
     "webpack-cli": "^4.1.0"
   }
 }

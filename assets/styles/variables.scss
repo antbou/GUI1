@@ -1,0 +1,13 @@
+$primary-color: #00a651;
+$secondary-color: #009933;
+$terciary-color: white;
+$fourth-color: #0e2431;
+
+$main-font: "Poppins", sans-serif;
+
+:export {
+    primaryColor: $primary-color;
+    secondaryColor: $secondary-color;
+    terciaryColor: $terciary-color;
+    fourthColor: $fourth-color;
+}
