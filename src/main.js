@@ -92,3 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   calendar.render();
 });
+
+let checkbox = document.querySelector("input[name=Hamburger]");
+
+checkbox.addEventListener('change', function () {
+
+  let section = document.querySelector("section");
+  (this.checked) ? section.style.display = "none" : section.style.display = "block";
+
+});

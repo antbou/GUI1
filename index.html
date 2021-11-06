@@ -6,12 +6,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href='./dist/main.css' rel='stylesheet' />
-  <script media="print" src='./dist/main.js'></script>
+  <script media="print" src='./dist/main.js' defer></script>
 
 </head>
 
+
 <body>
-  <div id='calendar'></div>
+  <nav>
+    <div class="navbar">
+      <div class="container nav-container">
+        <input class="checkbox" type="checkbox" name="Hamburger" id="" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <div class="logo">
+          <h1>Navbar</h1>
+        </div>
+        <div class="menu-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">blogs</a></li>
+          <li><a href="#">portfolio</a></li>
+          <li><a href="#">contact</a></li>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="hidden">
+    <div id='calendar' style="margin: 40px 10px;"></div>
+  </section>
+
 </body>
 
 </html>
