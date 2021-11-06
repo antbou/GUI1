@@ -4,9 +4,12 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import frLocale from '@fullcalendar/core/locales/fr';
 
 document.addEventListener('DOMContentLoaded', function () {
-    var calendarEl = document.getElementById('calendar');
+    let calendarEl = document.getElementById('calendar');
+    if (!calendarEl) { // If the calendar does not exist
+        return;
+    }
 
-    var calendar = new Calendar(calendarEl, {
+    let calendar = new Calendar(calendarEl, {
         plugins: [dayGridPlugin, timeGridPlugin],
         initialDate: '2021-11-05',
         initialView: 'timeGridDay',
