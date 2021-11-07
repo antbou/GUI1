@@ -1,4 +1,4 @@
-import { primaryColor, secondaryColor, terciaryColor, fourthColor } from './variables.js';
+import { primaryColor, secondaryColor, terciaryColor } from './variables.js';
 
 const students = [
     { "Name": "Anthony B." },
