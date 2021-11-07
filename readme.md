@@ -15,6 +15,7 @@ Development realized by `Anthony Bouillant`.
 - [webpack](https://webpack.js.org/)
 - [fullcalendar](https://fullcalendar.io/)
 - [jsgrid](http://js-grid.com/)
+- [fontawesome](https://fontawesome.com/)
 
 The list of the different dependencies used is available in package.json.
 
@@ -79,4 +80,8 @@ In **Firefox**: For sites that can be turned into PWAs, Firefox’s menu has a s
 ## Hosting
 The website is available on the following url : [mobile.onionsking.tk](https://mobile.onionsking.tk/)
 
+## Sources
+- [navbar](https://codepen.io/sanketbodke/pen/qBXBOgb)
+- [webpack](https://medium.com/js-imaginea/webpack-why-and-what-4948433cc2d3)
+- [install PWA](https://www.pcmag.com/how-to/how-to-use-progressive-web-apps)
 
