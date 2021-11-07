@@ -1,35 +1,48 @@
-var clients = [
-    { "Name": "Otto Clay", "Age": 25, "Country": 1, "Address": "Ap #897-1459 Quam Avenue", "Married": false },
-    { "Name": "Connor Johnston", "Age": 45, "Country": 2, "Address": "Ap #370-4647 Dis Av.", "Married": true },
-    { "Name": "Lacey Hess", "Age": 29, "Country": 3, "Address": "Ap #365-8835 Integer St.", "Married": false },
-    { "Name": "Timothy Henson", "Age": 56, "Country": 1, "Address": "911-5143 Luctus Ave", "Married": true },
-    { "Name": "Ramona Benton", "Age": 32, "Country": 3, "Address": "Ap #614-689 Vehicula Street", "Married": false }
+const students = [
+    { "Name": "Anthony B." },
+    { "Name": "Noah D." },
+    { "Name": "Marco P." },
+    { "Name": "Jacquie M" },
+    { "Name": "Jean C." },
 ];
 
-var countries = [
+const periodes = [
     { Name: "", Id: 0 },
-    { Name: "United States", Id: 1 },
-    { Name: "Canada", Id: 2 },
-    { Name: "United Kingdom", Id: 3 }
+    { Name: "Absence injustifiée", Id: 1 },
+    { Name: "Exclusion", Id: 2 },
+    { Name: "Absence justifié", Id: 3 },
+    { Name: "Absence j. hors délai", Id: 4 },
+    { Name: "Congé accordé", Id: 5 },
+    { Name: "Arrivée tardive", Id: 6 },
+    { Name: "Appui/Retenue", Id: 7 },
+    { Name: "Rendez-vous/externe", Id: 8 },
+    { Name: "Devoir non fait", Id: 9 },
 ];
 
 $("#jsGrid").jsGrid({
-    width: "100%",
-    height: "400px",
-
-    inserting: true,
+    width: "80%",
+    height: "auto",
+    inserting: false,
     editing: true,
     sorting: true,
     paging: true,
-
-    data: clients,
-
+    data: students,
     fields: [
-        { name: "Name", type: "text", width: 150, validate: "required" },
-        { name: "Age", type: "number", width: 50 },
-        { name: "Address", type: "text", width: 200 },
-        { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
-        { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
-        { type: "control" }
-    ]
+        { name: "Name", type: "text", width: 150, editing: false, align: "center" },
+        { name: "P1", type: "select", items: periodes, valueField: "Id", textField: "Name" },
+        { name: "P2", type: "select", items: periodes, valueField: "Id", textField: "Name" },
+        { name: "P3", type: "select", items: periodes, valueField: "Id", textField: "Name" },
+        { name: "P4", type: "select", items: periodes, valueField: "Id", textField: "Name" },
+        { name: "P5", type: "select", items: periodes, valueField: "Id", textField: "Name" },
+        { type: 'control', deleteButton: false, }
+    ],
 });
+
+const HeaderFontColor = "white";
+const HeaderBackgroundColor = "#009933";
+$(".jsgrid-header-cell").each(function () {
+    this.style.color = HeaderFontColor;
+    this.style.backgroundColor = HeaderBackgroundColor;
+});
+
+
