@@ -1,0 +1,27 @@
+@media screen and (max-width: 767px) {
+    .fc-toolbar.fc-header-toolbar {
+        font-size: 60%;
+    }
+    .fc-event-main-frame {
+        font-size: 60%;
+    }
+}
+
+#calendar {
+    margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
+
+    button {
+        background-color: $primary-color;
+        border-color: $secondary-color;
+    }
+
+    .fc-event-time {
+        background-color: $secondary-color;
+    }
+
+    .fc-timegrid-axis-cushion {
+        font-size: 80%;
+    }
+}
