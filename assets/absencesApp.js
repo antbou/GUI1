@@ -1,4 +1,4 @@
-import './absences.scss';
+import './absencesApp.scss';
 import '@fortawesome/fontawesome-free/js/all';
 import 'jsgrid/dist/jsgrid';
 import './js/hamburger';
