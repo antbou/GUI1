@@ -1,3 +1,5 @@
+import { primaryColor, secondaryColor, terciaryColor, fourthColor } from './variables.js';
+
 const students = [
     { "Name": "Anthony B." },
     { "Name": "Noah D." },
@@ -38,11 +40,10 @@ $("#jsGrid").jsGrid({
     ],
 });
 
-const HeaderFontColor = "white";
-const HeaderBackgroundColor = "#009933";
+
 $(".jsgrid-header-cell").each(function () {
-    this.style.color = HeaderFontColor;
-    this.style.backgroundColor = HeaderBackgroundColor;
+    this.style.color = terciaryColor;
+    this.style.backgroundColor = secondaryColor;
 });
 
 

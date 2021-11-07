@@ -2,6 +2,7 @@ import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import frLocale from '@fullcalendar/core/locales/fr';
+import { primaryColor, secondaryColor, terciaryColor, fourthColor } from './variables.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
@@ -19,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
         editable: true,
         locales: [frLocale],
         locale: 'fr',
-        eventBackgroundColor: '#00a651',
-        eventBorderColor: '#009933',
+        eventBackgroundColor: primaryColor,
+        eventBorderColor: secondaryColor,
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
