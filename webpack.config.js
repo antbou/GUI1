@@ -7,8 +7,8 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    mainApp: './assets/main.js',
-    absencesApp: './assets/absences.js',
+    app: './assets/app.js',
+    absencesApp: './assets/absencesApp.js',
   },
   resolve: {
     extensions: ['.js', '.scss'],

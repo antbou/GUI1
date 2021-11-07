@@ -2,11 +2,18 @@
 <html>
 
 <head>
-  <title>GUI1</title>
+  <title>Calendar Panel</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href='./dist/style/mainApp.css' rel='stylesheet' />
-  <script media="print" src='./dist/js/mainApp.js' defer></script>
+  <link href='./dist/style/app.css' rel='stylesheet' />
+  <script media="print" src='./dist/js/app.js' defer></script>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="/src/images/calendar.png">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js', { scope: './' })
+    }
+  </script>
 </head>
 
 <body>
