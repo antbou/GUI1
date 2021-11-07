@@ -1,4 +1,5 @@
 const path = require('path')
+var webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
@@ -10,7 +11,7 @@ module.exports = {
     absencesApp: './assets/absences.js',
   },
   resolve: {
-    extensions: ['.js', '.scss']
+    extensions: ['.js', '.scss'],
   },
   module: {
     rules: [
@@ -32,6 +33,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '../style/[name].css',
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
   ]
 }

@@ -14,7 +14,10 @@
     "@fullcalendar/interaction": "^5.10.1",
     "@fullcalendar/list": "^5.10.1",
     "@fullcalendar/moment": "^5.10.1",
-    "@fullcalendar/timegrid": "^5.10.1"
+    "@fullcalendar/timegrid": "^5.10.1",
+    "jquery": "^3.6.0",
+    "jsdom": "^18.0.1",
+    "jsgrid": "^1.5.3"
   },
   "devDependencies": {
     "css-loader": "^4.3.0",
