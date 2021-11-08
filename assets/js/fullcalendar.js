@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         plugins: [dayGridPlugin, timeGridPlugin],
         initialDate: '2021-11-05',
         initialView: 'timeGridDay',
-        slotDuration: '00:15:00',
         slotMinTime: '07:00:00',
         slotMaxTime: '22:00:00',
         contentHeight: 'auto',
@@ -74,44 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             }
         ],
-        eventDidMount: function (info) { // Adds 2 more fields (teacher and room)
-
-            let teacher = document.createElement('i');
-            teacher.textContent = info.event.extendedProps.teacher;
-            teacher.className = 'extendedProps'
-
-            let room = document.createElement('i');
-            room.textContent = info.event.extendedProps.room;
-            room.className = 'extendedProps'
-
-            let element = info.el.querySelector('.fc-event-title');
-            element.setAttribute('data-id', info.event.id);
-
-            element.after(teacher);
-            teacher.after(room);
-            room.before(document.createElement('br'))
-
-        },
-        eventClassNames: function (arg) { // hides or displays additional fields depending on the view
-
-            let element = document.querySelector('div[data-id="' + arg.event.id + '"]');
-
-            if (!element) {
-                return;
-            }
-
-            let extendedProps = element.parentElement.querySelectorAll('.extendedProps');
-
-            if (arg.view.type == 'timeGridWeek') {
-                extendedProps.forEach(function (params) {
-                    params.style.display = 'none'
-                })
-            } else {
-                extendedProps.forEach(function (params) {
-                    params.style.display = ''
-                })
-            }
-        }
     });
 
     const slotLabelOption = {
