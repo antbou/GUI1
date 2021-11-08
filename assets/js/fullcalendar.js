@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         plugins: [dayGridPlugin, timeGridPlugin],
         initialDate: '2021-11-05',
         initialView: 'timeGridDay',
+        slotDuration: '00:15:00',
         slotMinTime: '07:00:00',
         slotMaxTime: '22:00:00',
         contentHeight: 'auto',
