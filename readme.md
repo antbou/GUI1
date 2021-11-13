@@ -39,12 +39,12 @@ GUI1
 │   └───styles 
 └───doc
 │   └───specifications
-│   └───moodboard
-│   └───analysis
+│   └───mockup
+│   └───rapport
 └───src
     │
     └───html
-    └───styles 
+    └───images
 ```
 
 The `assets` folder contains the files not bundled by webpack. By default the dist folder is empty. To fill it, start webpack.
@@ -55,13 +55,13 @@ Webpack will use the following two entries:
 The `dist` folder contains the files bundled by webpack.
 
 The `doc` folder contains the following documentation:
-- The specifications (specification)
-- The Moodboard (moodboard)
-- Competitive Analysis (analysis)
+- The specifications
+- The mockup
+- The rapport
 
 The `src` folder contains the html files (index not included) and the project images.
 
-## Setting up the project
+## Usage
 
 Installing dependencies with npm :
 
@@ -70,6 +70,8 @@ Installing dependencies with npm :
 Launch webpack to group the assets in the "dist" folder :
 
 `npm run build`
+
+The index.html file must be launched from a server, it must not be directly opened in the browser.
 
 ## Install PWA
 
