@@ -2,8 +2,17 @@
     .fc-toolbar.fc-header-toolbar {
         font-size: 60%;
     }
-    .fc-event-main-frame {
-        font-size: 60%;
+
+    @media screen and (max-width: 600px) {
+        .fc-event-main-small {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .fc-event-main-small {
+            font-size: 60%;
+        }
     }
 }
 
@@ -24,4 +33,8 @@
     .fc-timegrid-axis-cushion {
         font-size: 80%;
     }
+}
+
+.fc-event-main {
+    text-align: center;
 }

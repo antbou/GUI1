@@ -2,7 +2,7 @@ import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import frLocale from '@fullcalendar/core/locales/fr';
-import { primaryColor, secondaryColor, urlAbsences } from './variables.js';
+import { primaryColor, secondaryColor, fifthColor, urlAbsences } from './variables.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
@@ -16,18 +16,44 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'timeGridDay',
         slotMinTime: '07:00:00',
         slotMaxTime: '22:00:00',
+        slotDuration: '00:20:00',
         contentHeight: 'auto',
         editable: true,
         locales: [frLocale],
         locale: 'fr',
         eventBackgroundColor: primaryColor,
         eventBorderColor: secondaryColor,
+        eventOrder: 'id',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'timeGridDay,timeGridWeek'
         },
         events: [
+            {
+                start: '2021-08-26',
+                end: '2022-07-22',
+                backgroundColor: fifthColor,
+                borderColor: fifthColor,
+                allDay: true,
+                title: 'Année 2021-2022',
+            },
+            {
+                start: '2021-08-26',
+                end: '2022-01-22',
+                backgroundColor: fifthColor,
+                borderColor: fifthColor,
+                allDay: true,
+                title: '1er semestre 2021-2022',
+            },
+            {
+                start: '2021-08-26',
+                end: '2021-11-12',
+                backgroundColor: fifthColor,
+                borderColor: fifthColor,
+                allDay: true,
+                title: '1er trimestre 2021-2022',
+            },
             {
                 id: '1',
                 title: 'GPR1',
@@ -73,6 +99,48 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             }
         ],
+        eventDidMount: function (info) { // Adds 2 more fields (teacher and room)
+
+            let teacher = document.createElement('i');
+            teacher.textContent = info.event.extendedProps.teacher;
+            teacher.className = 'extendedProps'
+
+            let room = document.createElement('i');
+            room.textContent = info.event.extendedProps.room;
+            room.className = 'extendedProps'
+
+            let element = info.el.querySelector('.fc-event-title');
+            element.setAttribute('data-id', info.event.id);
+
+            element.after(teacher);
+            teacher.after(room);
+            room.before(document.createElement('br'))
+
+        },
+        eventClassNames: function (arg) { // hides or displays additional fields depending on the view
+
+            let element = document.querySelector('div[data-id="' + arg.event.id + '"]');
+
+            if (!element) {
+                return;
+            }
+
+            let extendedProps = element.parentElement.querySelectorAll('.extendedProps');
+
+            let fcEvent = element.parentElement.parentElement;
+
+            if (arg.view.type == 'timeGridWeek') {
+                extendedProps.forEach(function (params) {
+                    params.style.display = 'none';
+                    fcEvent.classList.add('fc-event-main-small');
+                })
+            } else {
+                extendedProps.forEach(function (params) {
+                    params.style.display = '';
+                    fcEvent.classList.remove('fc-event-main-small');
+                })
+            }
+        }
     });
 
     const slotLabelOption = {
