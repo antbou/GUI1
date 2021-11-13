@@ -149,16 +149,28 @@
     display: none;
 }
 
+// .menu-items li a {
+//     margin: 0;
+//     padding: 0;
+//     width: 150px;
+//     height: 50px;
+//     margin: auto;
+// }
+
 .square {
-    a {
-        margin: 0;
-        padding: 0;
-    }
-    b {
-        color: $terciary-color;
-        padding: 12px 60px 12px 60px;
-        background-color: $secondary-color;
+    color: $terciary-color;
+
+    .button {
+        font-weight: bold !important;
         border-radius: 25px;
+        background-color: $secondary-color;
+        border: none;
+        color: $terciary-color !important;
+        padding: 15px 52px !important;
+        text-align: center;
+        display: inline-block;
+        margin: 15px 2px;
+        cursor: pointer;
     }
 }
 

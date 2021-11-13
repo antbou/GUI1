@@ -2,7 +2,7 @@ import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import frLocale from '@fullcalendar/core/locales/fr';
-import { primaryColor, secondaryColor, urlAbsences } from './variables.js';
+import { primaryColor, secondaryColor, fifthColor, urlAbsences } from './variables.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
@@ -16,18 +16,44 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'timeGridDay',
         slotMinTime: '07:00:00',
         slotMaxTime: '22:00:00',
+        slotDuration: '00:20:00',
         contentHeight: 'auto',
         editable: true,
         locales: [frLocale],
         locale: 'fr',
         eventBackgroundColor: primaryColor,
         eventBorderColor: secondaryColor,
+        eventOrder: 'id',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'timeGridDay,timeGridWeek'
         },
         events: [
+            {
+                start: '2021-08-26',
+                end: '2022-07-22',
+                backgroundColor: fifthColor,
+                borderColor: fifthColor,
+                allDay: true,
+                title: 'Année 2021-2022',
+            },
+            {
+                start: '2021-08-26',
+                end: '2022-01-22',
+                backgroundColor: fifthColor,
+                borderColor: fifthColor,
+                allDay: true,
+                title: '1er semestre 2021-2022',
+            },
+            {
+                start: '2021-08-26',
+                end: '2021-11-12',
+                backgroundColor: fifthColor,
+                borderColor: fifthColor,
+                allDay: true,
+                title: '1er trimestre 2021-2022',
+            },
             {
                 id: '1',
                 title: 'GPR1',
@@ -101,13 +127,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let extendedProps = element.parentElement.querySelectorAll('.extendedProps');
 
+            let fcEvent = element.parentElement.parentElement;
+
             if (arg.view.type == 'timeGridWeek') {
                 extendedProps.forEach(function (params) {
-                    params.style.display = 'none'
+                    params.style.display = 'none';
+                    fcEvent.classList.add('fc-event-main-small');
                 })
             } else {
                 extendedProps.forEach(function (params) {
-                    params.style.display = ''
+                    params.style.display = '';
+                    fcEvent.classList.remove('fc-event-main-small');
                 })
             }
         }
